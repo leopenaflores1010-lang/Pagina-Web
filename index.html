@@ -1,18 +1,530 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>Interfaz Grafica </title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atelier Iberson - Motos Deportivas de Alto Rendimiento</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    </head>
-    <body>
-        <h1>Presentacion del estudiante </h1>
-        <h2>Nombre: Leonardo Peña Flores
-            Edad: 19 
-            Estado Civil: Soltero
-            Profesion: Estudiante
-            Hobbies: Jugar basket, videjuegos, dibujar, escuchar musica
-        </h2>
-    </body>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/000000/motorcycle.png">
+    
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <div class="navbar-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Atelier IBERSON</span>
+            </div>
+            
+            <!-- Menú de navegación -->
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="#destacadas" class="nav-link">Motos</a></li>
+                <li class="nav-item"><a href="#catalogo" class="nav-link">Catálogo</a></li>
+                <li class="nav-item"><a href="#nosotros" class="nav-link">Sobre Nosotros</a></li>
+                <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+                <li class="nav-item"><a href="#" class="nav-link buy-btn">Comprar Ahora</a></li>
+            </ul>
+            
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="inicio">
+        <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1517957754643-914fff5fd57a?auto=format&fit=crop&w=1600&q=80">
+            <source src="video/video1.mp4" type="video/mp4">
+        </video>
+        <!-- Partículas de velocidad -->
+        <div class="particles" id="particles"></div>
+        
+        <!-- Overlay oscuro -->
+        <div class="hero-overlay"></div>
+        
+        <!-- Contenido del Hero -->
+        <div class="hero-content">
+            <h1 class="hero-title">DOMINA LA PISTA</h1>
+            <p class="hero-subtitle">Motos deportivas de alto rendimiento que desafían los límites</p>
+            
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('catalogo')">Ver Catálogo</button>
+                <button class="btn btn-secondary" onclick="playVideo()">▶ Ver Video</button>
+            </div>
+        </div>
+        
+        <!-- Indicador de scroll -->
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- ==================== TOP 20 MÁS VENDIDOS ==================== -->
+    <section class="best-sellers" id="destacadas">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Top 20 Más Vendidos</h2>
+                <p class="section-subtitle">Motos, cascos, cadenas y seguridad con mayor demanda</p>
+            </div>
+
+            <div class="best-sellers-grid">
+                <div class="seller-card">
+                    <div class="seller-image"><img src="https://i.blogs.es/dc72b3/bmw-m-1000-rr-2021-003/1366_2000.jpg"></div>
+                    <div class="seller-info">
+                        <span class="seller-label">Moto</span>
+                        <h3 class="seller-name">BWM S1000 RR</h3>
+                        <p class="seller-category">Deportiva de alto rendimiento</p>
+                        <div class="seller-price">$33,999</div>
+                    </div>
+                </div>
+                <div class="seller-card">
+                    <div class="seller-image"><img src="https://lamoto.com.ar/wp-content/uploads/2022/10/Ducati-Panigale-V4-R-2023-ambiente.jpeg" alt="Phantom 600R"></div>
+                    <div class="seller-info">
+                        <span class="seller-label">Moto</span>
+                        <h3 class="seller-name"> Ducati V4 R</h3>
+                        <p class="seller-category">Circuito y calle premium</p>
+                        <div class="seller-price">$14,499</div>
+                    </div>
+                </div>
+                <div class="seller-card">
+                    <div class="seller-image"><img src="https://lamoto.com.ar/wp-content/uploads/2022/12/Yamaha-R1M-2022-21-1200x675-1.jpg" alt="Thunder 1200"></div>
+                    <div class="seller-info">
+                        <span class="seller-label">Moto</span>
+                        <h3 class="seller-name">Yamaha YZF-R1</h3>
+                        <p class="seller-category">Pista y velocidad extrema</p>
+                        <div class="seller-price">$35,999</div>
+                    </div>
+                </div>
+                <div class="seller-card">
+                    <div class="seller-image"><img src="https://lamoto.com.ar/wp-content/uploads/2022/09/Kawasaki-ZX-10R-2023-verde.jpg" alt="Blade 950"></div>
+                    <div class="seller-info">
+                        <span class="seller-label">Moto</span>
+                        <h3 class="seller-name">Kawasaki Ninja ZX-10R</h3>
+                        <p class="seller-category">Equilibrio entre estilo y control</p>
+                        <div class="seller-price">$23,999</div>
+                    </div>
+                </div>
+                <div class="seller-card">
+                    <div class="seller-image"><img src="https://www.excelenciasdelmotor.com/sites/default/files/inline-images/Aprilia%20RS4%20125.jpg" alt="Specter 850"></div>
+                    <div class="seller-info">
+                        <span class="seller-label">Moto</span>
+                        <h3 class="seller-name">Aprilia RS4 125</h3>
+                        <p class="seller-category">Agresiva y precisa en curvas</p>
+                        <div class="seller-price">$21,499</div>
+                    </div>
+                </div>
+                <div class="seller-card">
+                    <div class="seller-image"><img src="https://www.excelenciasdelmotor.com/sites/default/files/inline-images/Kawasaki-Ninja-125_0.jpg" alt="Storm 1000X"></div>
+                    <div class="seller-info">
+                        <span class="seller-label">Moto</span>
+                        <h3 class="seller-name">KAWASAKI NINJA 125</h3>
+                        <p class="seller-category">Máquina de alta potencia</p>
+                        <div class="seller-price">$30,999</div>
+                    </div>
+                </div>
+                <div class="seller-card">
+                    <div class="seller-image"><img src="https://www.excelenciasdelmotor.com/sites/default/files/inline-images/yamaha-YZF-R125.jpg" alt="Apex 1000R"></div>
+                    <div class="seller-info">
+                        <span class="seller-label">Moto</span>
+                        <h3 class="seller-name">Yamaha YZF-R125</h3>
+                        <p class="seller-category">Tecnología híbrida de pista</p>
+                        <div class="seller-price">$26,499</div>
+                    </div>
+                </div>
+                <div class="seller-card">
+                    <div class="seller-image"><img src="https://www.excelenciasdelmotor.com/sites/default/files/inline-images/Suzuki-GSXR125-2017-3.jpg" alt="Nexus 1100"></div>
+                    <div class="seller-info">
+                        <span class="seller-label">Moto</span>
+                        <h3 class="seller-name">Suzuki GSX-R125</h3>
+                        <p class="seller-category">Innovación con IA integrada</p>
+                        <div class="seller-price">$32,999</div>
+                    </div>
+                </div>
+                <div class="seller-card">
+                    <div class="seller-image"><img src="https://www.excelenciasdelmotor.com/sites/default/files/inline-images/KTM_RC125.jpg" alt="Rebel 600"></div>
+                    <div class="seller-info">
+                        <span class="seller-label">Moto</span>
+                        <h3 class="seller-name">KTM RC 125</h3>
+                        <p class="seller-category">Acceso ligero al circuito</p>
+                        <div class="seller-price">$11,999</div>
+                    </div>
+                </div>
+                <div class="seller-card">
+                    <div class="seller-image"><img src="https://bxrepsol.s3.eu-west-1.amazonaws.com/static/2023/07/11045955/Foto-7-Ducati-Panigale-V4-SP2-1024x576.jpeg" alt="Casco Raptor Carbon"></div>
+                    <div class="seller-info">
+                        <span class="seller-label">Casco</span>
+                        <h3 class="seller-name">Ducati Panigale V4 SP2</h3>
+                        <p class="seller-category">Protección ligera y aerodinámica</p>
+                        <div class="seller-price">$269</div>
+                    </div>
+                </div>
+                <div class="seller-card">
+                    <div class="seller-image"><img src="https://bxrepsol.s3.eu-west-1.amazonaws.com/static/2023/07/11050027/Foto-8-Honda-CBR1000RR-R-1024x649.jpg" alt="Casco Velocity Pro"></div>
+                    <div class="seller-info">
+                        <span class="seller-label">Casco</span>
+                        <h3 class="seller-name">Honda CBR1000 RR-R</h3>
+                        <p class="seller-category">Acabado premium para pista</p>
+                        <div class="seller-price">$339</div>
+                    </div>
+                </div>
+                <div class="seller-card">
+                    <div class="seller-image"><img src="https://bxrepsol.s3.eu-west-1.amazonaws.com/static/2023/07/11050420/Foto-11-Suzuki-Hayabusa-1300-1-1024x682.jpg" alt="Guantes Nitro Grip"></div>
+                    <div class="seller-info">
+                        <span class="seller-label">Seguridad</span>
+                        <h3 class="seller-name">Suzuki Hayabusa 1300</h3>
+                        <p class="seller-category">Agarré superior sin perder sensibilidad</p>
+                        <div class="seller-price">$79</div>
+                    </div>
+                </div>
+                <div class="seller-card">
+                    <div class="seller-image"><img src="https://bxrepsol.s3.eu-west-1.amazonaws.com/static/2023/07/11050452/Foto-12-Yamaha-R1M.jpg" alt="Candado Titan Lock"></div>
+                    <div class="seller-info">
+                        <span class="seller-label">Cadena</span>
+                        <h3 class="seller-name">Yamaha R1M</h3>
+                        <p class="seller-category">Seguridad antifurto avanzada</p>
+                        <div class="seller-price">$129</div>
+                    </div>
+                </div>
+                <div class="seller-card">
+                    <div class="seller-image"><img src="https://hackercar.com/wp-content/uploads/2021/10/Kawasaki_Ninja_H2R.jpg" alt="Chaleco Shield Pro"></div>
+                    <div class="seller-info">
+                        <span class="seller-label">Seguridad</span>
+                        <h3 class="seller-name">KAWASAKI NINJA H2 R</h3>
+                        <p class="seller-category">Impacto y ventilación equilibrados</p>
+                        <div class="seller-price">$180.000</div>
+                    </div>
+                </div>
+                <div class="seller-card">
+                    <div class="seller-image"><img src="https://republicadominicana.kawasaki-la.com/Content/Images/SubBrand/2026-ninja/26ZX1002R_40TBK1DRF3CG_A.png?w=600" alt="Luz LED Track Beam"></div>
+                    <div class="seller-info">
+                        <span class="seller-label">Accesorio</span>
+                        <h3 class="seller-name">KAWASAKI NINJA H2</h3>
+                        <p class="seller-category">Visibilidad nocturna extrema</p>
+                        <div class="seller-price">$59</div>
+                    </div>
+                </div>
+                <div class="seller-card">
+                    <div class="seller-image"><img src="https://www.moto1pro.com/sites/default/files/cfmoto_675_ss_2.jpg" alt="Sensor Road Guard"></div>
+                    <div class="seller-info">
+                        <span class="seller-label">Seguridad</span>
+                        <h3 class="seller-name">CFMoto 675 SS</h3>
+                        <p class="seller-category">Alerta de proximidad inteligente</p>
+                        <div class="seller-price">$149</div>
+                    </div>
+                </div>
+                <div class="seller-card">
+                    <div class="seller-image"><img src="https://s.alicdn.com/@sc04/kf/H08e25e36e18c428cb09698e63694756ay/Imported-Yamaha-R6-R1-and-Ninja-250-Racing-Motorcycles.png" alt="Kit Protección Total"></div>
+                    <div class="seller-info">
+                        <span class="seller-label">Seguridad</span>
+                        <h3 class="seller-name">YAMAHA R6</h3>
+                        <p class="seller-category">Casco, guantes y cobertura completa</p>
+                        <div class="seller-price">$399</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CARACTERÍSTICAS ==================== -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Características Premium</h2>
+                <p class="section-subtitle">Tecnología de punta en cada detalle</p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- Característica 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3 class="feature-title">Motor Supercargado</h3>
+                    <p class="feature-desc">Motores V4 de inyección directa con tecnología turbo variable para máximo rendimiento</p>
+                </div>
+                
+                <!-- Característica 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🛑</div>
+                    <h3 class="feature-title">Frenos Brembo</h3>
+                    <p class="feature-desc">Sistema de frenado de carbón cerámico con ABS adaptativo de última generación</p>
+                </div>
+                
+                <!-- Característica 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3 class="feature-title">Suspensión Öhlins</h3>
+                    <p class="feature-desc">Amortiguadores ajustables electrónicamente para control total en cualquier condición</p>
+                </div>
+                
+                <!-- Característica 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🖥️</div>
+                    <h3 class="feature-title">Electrónica Avanzada</h3>
+                    <p class="feature-desc">Control de tracción, modos de manejo inteligentes y telemetría en tiempo real</p>
+                </div>
+                
+                <!-- Característica 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">💨</div>
+                    <h3 class="feature-title">Diseño Aerodinámico</h3>
+                    <p class="feature-desc">Aerodinámica optimizada con carenado deportivo para máxima estabilidad</p>
+                </div>
+                
+                <!-- Característica 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Sistema Eléctrico</h3>
+                    <p class="feature-desc">Conectividad Bluetooth, navegación GPS integrada y carga inalámbrica</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CATÁLOGO COMPLETO ==================== -->
+    <section class="catalog" id="catalogo">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Catálogo Completo</h2>
+                <p class="section-subtitle">Explora todas nuestras motos de carrera</p>
+            </div>
+            
+            <!-- Filtros -->
+            <div class="filter-section">
+                <div class="filter-group">
+                    <label for="filterCategory">Categoría:</label>
+                    <select id="filterCategory" onchange="filterCatalog()">
+                        <option value="">Todas</option>
+                        <option value="Moto">Motos</option>
+                        <option value="Casco">Cascos</option>
+                        <option value="Cadena">Cadenas</option>
+                        <option value="Seguridad">Seguridad</option>
+                        <option value="Accesorio">Accesorios</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="filterDisplacement">Cilindrada:</label>
+                    <select id="filterDisplacement" onchange="filterCatalog()">
+                        <option value="">Todas</option>
+                        <option value="600">600cc</option>
+                        <option value="750">750cc</option>
+                        <option value="1000">1000cc+</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="filterPrice">Precio Máximo:</label>
+                    <select id="filterPrice" onchange="filterCatalog()">
+                        <option value="">Todos</option>
+                        <option value="15000">$0 - $15,000</option>
+                        <option value="25000">$15,000 - $25,000</option>
+                        <option value="50000">$25,000+</option>
+                    </select>
+                </div>
+                
+                <button class="btn-reset" onclick="resetFilters()">Limpiar Filtros</button>
+            </div>
+            
+            <!-- Grid de motos -->
+            <div class="catalog-grid" id="catalogGrid">
+                <!-- Las motos se cargarán con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SOBRE NOSOTROS ==================== -->
+    <section class="about" id="nosotros">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Sobre VELOCITY RACING</h2>
+                    <p class="about-description">
+                        Fundada en 2010, VELOCITY RACING nació de una pasión obsesiva por la velocidad y la ingeniería de precisión. Cada moto que fabricamos representa años de investigación, diseño aerodinámico avanzado y pruebas extremas en las pistas más desafiantes del mundo.
+                    </p>
+                    <p class="about-description">
+                        Nuestro compromiso es simple: entregar máquinas que no solo superan los límites del rendimiento, sino que establecen nuevos estándares en la industria. Con un equipo de 200 ingenieros y diseñadores de clase mundial, creamos motos que son obras de arte en movimiento.
+                    </p>
+                    <p class="about-description">
+                        Desde pilotos profesionales hasta entusiastas apasionados, confiamos en VELOCITY RACING para llevar sus límites al siguiente nivel.
+                    </p>
+                </div>
+                
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Años en la industria</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Clientes satisfechos</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Ingenieros talentosos</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">Motos fabricadas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIOS ==================== -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Lo que Dicen Nuestros Clientes</h2>
+                <p class="section-subtitle">Experiencias reales de los mejores del mundo</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonio 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="pilot-avatar" style="background: linear-gradient(135deg, #0088ff, #00ddff);">JM</div>
+                        <div class="pilot-info">
+                            <h4 class="pilot-name">Juan Márquez</h4>
+                            <p class="pilot-title">Campeón MotoGP 2024</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"La V-R1 1000 es puro puro. No he sentido nunca una moto tan ágil y poderosa. Es como pilotar el futuro."</p>
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                
+                <!-- Testimonio 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="pilot-avatar" style="background: linear-gradient(135deg, #00ff88, #00ccff);">AS</div>
+                        <div class="pilot-info">
+                            <h4 class="pilot-name">Ana Sánchez</h4>
+                            <p class="pilot-title">Piloto de carreras profesional</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"VELOCITY RACING revolucionó mi técnica de pilotaje. La precisión de estas máquinas no tiene competencia."</p>
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                
+                <!-- Testimonio 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="pilot-avatar" style="background: linear-gradient(135deg, #ffaa00, #ff5500);">CR</div>
+                        <div class="pilot-info">
+                            <h4 class="pilot-name">Carlos Rodríguez</h4>
+                            <p class="pilot-title">Piloto de ruta deportiva</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Cada kilómetro en mi Shadow 750R es pura adrenalina. ¡Regresaré a comprar más motos!"</p>
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                
+                <!-- Testimonio 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="pilot-avatar" style="background: linear-gradient(135deg, #0088ff, #0066ff);">SG</div>
+                        <div class="pilot-info">
+                            <h4 class="pilot-name">Sofía González</h4>
+                            <p class="pilot-title">Corredora de circuito</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"VELOCITY RACING no solo fabrica motos, crea experiencias. La Thunder 1200 es el sueño hecho realidad."</p>
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MODAL ==================== -->
+    <div class="modal" id="detailsModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-body" id="modalBody">
+                <!-- El contenido se cargará con JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== VIDEO MODAL ==================== -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-content">
+            <button class="modal-close" onclick="closeVideoModal()">✕</button>
+            <video id="heroVideo" class="modal-video" controls playsinline></video>
+        </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Sección 1: Info -->
+                <div class="footer-section">
+                    <h4 class="footer-title">VELOCITY RACING</h4>
+                    <p class="footer-text">Motos deportivas de alto rendimiento que desafían los límites.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                        <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Facebook">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+
+                        <a href="#" class="social-link" title="TikTok">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Sección 2: Enlaces Rápidos -->
+                <div class="footer-section">
+                    <h4 class="footer-title">Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#destacadas">Motos Destacadas</a></li>
+                        <li><a href="#catalogo">Catálogo</a></li>
+                        <li><a href="#nosotros">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Sección 3: Soporte -->
+                <div class="footer-section">
+                    <h4 class="footer-title">Soporte</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Centro de Ayuda</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos de Servicio</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Sección 4: Newsletter -->
+                <div class="footer-section">
+                    <h4 class="footer-title">Mantente Actualizado</h4>
+                    <p class="footer-text">Recibe noticias exclusivas sobre nuestros lanzamientos</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Tu correo" class="newsletter-input">
+                        <button class="newsletter-btn">Suscribir</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 VELOCITY RACING. Todos los derechos reservados. Diseño Premium.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
 </html>
-
- git config --global user.email "leopenaflores1010.com"
